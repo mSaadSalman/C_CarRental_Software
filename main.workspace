@@ -1,0 +1,192 @@
+#include <iostream>
+using namespace std;
+#include<iomanip>
+int title();
+double everything();
+double pickup(double carTotal);
+double addons(double pickTotal);
+
+int main()
+{
+    double carTotal;
+    title();
+    carTotal = everything();
+    double pickTotal;
+    pickTotal = pickup(carTotal);
+    addons(pickTotal);
+    return 0;
+}
+
+int title()
+{
+cout<<"|----------------------------------------------------------------------------------------------------------"<<endl;
+cout<<"   _____   _____ _______    _____             _____            _        _     "<<endl;
+cout<<"  |  __ \\ / ____|__   __|  / ____|           |  __ \\          | |      | |    "<<endl;
+cout<<"  | |  | | (___    | |    | |     __ _ _ __  | |__) |___ _ __ | |_ __ _| |___ "<<endl;
+cout<<"  | |  | |\\___ \\   | |    | |    / _` | '__| |  _  // _ \\ '_ \\| __/ _` | / __|"<<endl;
+cout<<"  | |__| |____) |  | |    | |___| (_| | |    | | \\ \\  __/ | | | || (_| | \\__ \\"<<endl;
+cout<<"  |_____/|_____/   |_|     \\_____\\__,_|_|    |_|  \\_\\___|_| |_|\\__\\__,_|_|___/"<<endl;
+cout<<"-----------------------------------------------------------------------------------------------------------"<<endl;
+string name;
+    cout<<"Welcome to the DST Car Rentals where we deliver your rental car or you can pick it up"<<endl;
+    cout<<"Please enter your name"<<endl;
+    getline(cin,name);
+    cout<<"Okay "<<name<<", Our availible types of cars are listed below including the rate"<<endl;
+
+}
+
+double everything()
+{
+cout.setf(ios::fixed);
+cout<<setprecision(2);
+    cout<<"\n"<<endl;
+
+
+    cout<<"-----Type--------|-----Price----|------Passengers-----"<<endl;
+    cout<<"|Sedan ----------|--- $60/day --|------ up to 5 ------|"<<endl;
+    cout<<"|Sport ----------|--- $130/day -|------ up to 2 ------|"<<endl;
+    cout<<"|SUV ------------|--- $70/day --|------ up to 7 ------|"<<endl;
+    cout<<"|Van ------------|--- $65/day --|------ up to 8 ------|"<<endl;
+    cout<<"|Truck ----------|--- $80/day --|------ up to 6 ------|"<<endl;
+    cout<<"-------------------------------------------------------"<<endl;
+
+    cout<<"\n"<<endl;
+
+    string car;
+    int days;
+    string sedan, Sedan;
+    string Sport, sport;
+    cout<<"Which type of vehicle would you like to rent?"<<endl;
+    cin>>car;
+
+double cartotal;
+
+     cout<<"How many days would you like to rent a " << car << "?"<<endl;
+        cin>>days;
+        cout<<"\n"<<endl;
+
+    if (car=="sedan"||car=="Sedan")
+    {
+     cartotal=60*days;
+cout<<"The price of renting a "<<car<<" for "<<days<<" days will be $"<<cartotal<<endl;
+cout<<"The car you will be renting is a 2018 BMW 5 series"<<endl;
+cout<<"\n"<<endl;
+    return cartotal;
+    }
+
+    else if (car=="Sport"||car=="sport")
+    {
+        cartotal=130*days;
+ cout<<"The price of renting a "<<car<<" for "<<days<<" days will be $"<<cartotal<<endl;
+ cout<<"The car you will be renting is a 2018 Lamborghini Huracan"<<endl;
+ cout<<"\n"<<endl;
+    return cartotal;
+    }
+    else if (car=="SUV"||car=="suv")
+    {
+    cartotal=70*days;
+ cout<<"The price of renting a "<<car<<" for "<<days<<" days will be $"<<cartotal<<endl;
+ cout<<"The car you will be renting is a 2018 Mercedes GLS"<<endl;
+ cout<<"\n"<<endl;
+    return cartotal;
+    }
+       else if (car=="Van"||car=="van")
+    {
+    cartotal=65*days;
+ cout<<"The price of renting a "<<car<<" for "<<days<<" days will be $"<<cartotal<<endl;
+ cout<<"The car you will be renting is a 2018 Chrysler Pacifica"<<endl;
+ cout<<"\n"<<endl;
+ return cartotal;
+    }
+       else if (car=="Truck"||car=="truck")
+    {
+        cartotal=80*days;
+  cout<<"The price of renting a "<<car<<" for "<<days<<" days will be $"<<cartotal<<endl;
+  cout<<"The car you will be renting is a 2018 Ford F-150"<<endl;
+  cout<<"\n"<<endl;
+  return cartotal;
+     }
+}
+
+    double pickup(double carTotal)
+    {
+    char pickup;
+    double picktotal;
+
+    cout<<"Will you be picking up your rental from our locations or will be getting delivered? L=Location D= Delivery"<<endl;
+    cin>>pickup;
+
+    if (pickup=='L'||pickup=='l')
+    {
+        cout<<"Since you are picking the veichle from our locations, there will be no charge :)"<<endl;
+        picktotal= carTotal+0;
+        cout<<"\n"<<endl;
+        cout<<"Your total so far is $"<<picktotal<<endl;
+    }
+
+    else if (pickup=='D'||pickup=='d')
+    {
+        cout<<"The delivery will cost $50 extra on top of total"<<endl;
+        picktotal= carTotal+50;
+        cout<<"\n"<<endl;
+        cout<<"Your total so far is $"<<picktotal<<endl;
+
+
+    }
+    return picktotal;
+
+}
+double addons(double pickTotal)
+{
+    string gps;
+    string seat;
+    cout<<"For your acesibility we have some aditional addons"<<endl;
+    cout<<"\n"<<endl;
+    double totaladd;
+    double totaladdons;
+    double Tseat;
+    double Tgps;
+
+    cout<<"Will you like a GPS || $50 extra /// yes or no"<<endl;
+    cin>>gps;
+    if (gps=="yes"||gps=="Yes")
+    {
+        cout<<"\n"<<endl;
+        Tgps= 0+50;
+        cout<<"Okay, so this will be added to your grand total"<<endl;
+    }
+
+    else if(gps=="no"||gps=="No")
+    {
+        cout<<"\n"<<endl;
+        Tgps=0;
+     cout<<"Okay, we won't charge you for that then"<<endl;
+    }
+
+    cout<<"\n"<<endl;
+    cout<<"Will you like to also rent a car seat? || $50 extra /// yes or no"<<endl;
+    cin>>seat;
+    if (seat=="yes"||seat=="Yes")
+    {
+        cout<<"\n"<<endl;
+        Tseat= 0+50;
+        cout<<"Okay, so this will be added to your grand total"<<endl;
+    }
+
+    else if(seat=="No"||seat=="no")
+    {
+        cout<<"\n"<<endl;
+        Tseat=0;
+     cout<<"Okay, we won't charge you for that then"<<endl;
+    }
+
+    totaladd= Tseat+Tgps;
+    totaladdons= pickTotal+totaladd;
+
+    cout<<"\n"<<endl;
+    cout<<"Your grand total so far is $"<<totaladdons<<endl;
+}
+
+
+
+
